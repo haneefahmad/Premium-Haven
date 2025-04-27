@@ -99,4 +99,5 @@ export const products: Product[] = [
   }
 ];
 
+// Ensure featuredProducts use the same IDs as Supabase for correct navigation
 export const featuredProducts = products.slice(0, 3);

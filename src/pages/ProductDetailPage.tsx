@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ShoppingCart, ArrowLeft, Star, Truck, Shield } from 'lucide-react';
-import { products } from '../data/products';
+import { fetchProduct } from '../lib/api';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ProductCard';
 
@@ -9,10 +9,46 @@ const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { addToCart } = useCart();
-  
-  const product = products.find(p => p.id === id);
-  
-  if (!product) {
+  const [product, setProduct] = React.useState<any>(null);
+  const [relatedProducts, setRelatedProducts] = React.useState<any[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    const load = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const prod = await fetchProduct(id!);
+        setProduct(prod);
+        // Fetch related products by category, excluding current one
+        if (prod?.category_id) {
+          // Use fetchProducts if you want to fetch from backend, or keep using static if you wish
+          // For now, fallback to no related products (or implement fetchProducts by category if needed)
+          setRelatedProducts([]);
+        }
+      } catch (err: any) {
+        setError('Product Not Found');
+        setProduct(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    if (id) load();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-12 text-center">
+        <div className="animate-pulse">
+          <div className="h-8 bg-gray-200 rounded w-1/4 mx-auto mb-8"></div>
+          <div className="h-96 bg-gray-100 rounded-lg mx-auto w-1/2"></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !product) {
     return (
       <div className="container mx-auto px-4 py-12 text-center">
         <h2 className="text-2xl font-semibold mb-4">Product Not Found</h2>
@@ -27,12 +63,7 @@ const ProductDetailPage: React.FC = () => {
       </div>
     );
   }
-  
-  // Get related products (same category)
-  const relatedProducts = products
-    .filter(p => p.category_id === product.category_id && p.id !== product.id)
-    .slice(0, 3);
-  
+
   return (
     <div className="container mx-auto px-4 py-12">
       <button 
@@ -81,7 +112,13 @@ const ProductDetailPage: React.FC = () => {
               Add to Cart
             </button>
             
-            <button className="w-full border border-gray-900 px-6 py-3 rounded-md hover:bg-gray-100 transition">
+            <button
+              className="w-full border border-gray-900 px-6 py-3 rounded-md hover:bg-gray-100 transition"
+              onClick={() => {
+                addToCart(product);
+                navigate('/checkout');
+              }}
+            >
               Buy Now
             </button>
           </div>

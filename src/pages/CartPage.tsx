@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
@@ -26,6 +26,8 @@ const CartPage: React.FC = () => {
     );
   }
 
+  const navigate = useNavigate();
+
   return (
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-8">Your Cart</h1>
@@ -50,7 +52,7 @@ const CartPage: React.FC = () => {
                 <div className="col-span-6 flex items-center mb-4 md:mb-0">
                   <div className="w-20 h-20 rounded overflow-hidden mr-4">
                     <img 
-                      src={item.image} 
+                      src={item.image_url} 
                       alt={item.name} 
                       className="w-full h-full object-cover" 
                     />
@@ -130,14 +132,16 @@ const CartPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="border-t pt-4 mb-6">
-              <div className="flex justify-between font-semibold">
-                <span>Total</span>
-                <span>${totalPrice.toFixed(2)}</span>
-              </div>
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-lg font-bold">Total</span>
+              <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span>
             </div>
             
-            <button className="w-full bg-gray-900 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition mb-4">
+            <button
+              className="w-full bg-gray-900 text-white py-3 rounded-md font-semibold hover:bg-gray-800 transition"
+              onClick={() => navigate('/checkout')}
+              disabled={items.length === 0}
+            >
               Proceed to Checkout
             </button>
           </div>

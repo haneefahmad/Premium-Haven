@@ -122,7 +122,7 @@ const ShopPage: React.FC = () => {
                 type="range"
                 id="price-range"
                 min="0"
-                max="10000"
+                max="100000"
                 step="100"
                 value={priceRange}
                 onChange={(e) => setPriceRange(Number(e.target.value))}
@@ -130,7 +130,7 @@ const ShopPage: React.FC = () => {
               />
               <div className="flex justify-between text-xs text-gray-500 mt-1">
                 <span>$0</span>
-                <span>$10000</span>
+                <span>$100000</span>
               </div>
             </div>
             
