@@ -30,3 +30,20 @@ A professional full-stack web application built with **React**, **Vite**, **Type
 
 ## 📂 Project Structure
 
+project/
+├── public/              # Static files
+├── src/
+│   ├── assets/          # Images, icons
+│   ├── components/      # Reusable components
+│   ├── hooks/           # Custom hooks
+│   ├── pages/           # Pages/views
+│   ├── services/        # Supabase services
+│   └── utils/           # Utility functions
+├── supabase/            # Supabase setup
+├── .env                 # Environment variables
+├── package.json         # Dependencies and scripts
+├── tailwind.config.js   # Tailwind config
+├── vite.config.ts       # Vite config
+└── tsconfig.json        # TypeScript config
+
+
