@@ -1,7 +1,4 @@
-
-
-```markdown
-# 🛍️ **Premium Haven – Full Stack eCommerce Website**
+# 🛍️ **PREMIUM HAVEN – FULL STACK ECOMMERCE WEBSITE**
 
 A high-performance, scalable, and responsive **eCommerce web application** built using **React**, **Vite**, **TypeScript**, **Tailwind CSS**, and **Supabase**.
 
@@ -11,41 +8,38 @@ A high-performance, scalable, and responsive **eCommerce web application** built
 
 ## ✨ Features
 
-- ⚡ Super-fast development with **Vite**
-- 🛒 **Complete eCommerce Workflow** – Shop, Cart, Orders, and Payments
-- 🔐 **User Authentication** – Signup/Login/Logout using Supabase Auth
-- 🧾 **Admin Features** – Add/Edit/Delete products
-- 🧃 **Product Management** – Categorization, filtering, and searching
-- 🛍️ **Cart System** – Add to cart, update quantity, remove items
-- ✅ **Order Checkout** – Confirm orders with backend integration
-- 🎯 **Responsive UI** – Fully optimized for mobile and desktop
-- 🧠 **State Management** – Context API + Custom Hooks
-- 📦 **Database Integration** – Supabase as backend (PostgreSQL)
-- ✅ **Type-safe Development** – Powered by TypeScript + ESLint
-- 🚀 **Easy Deployment** – Supports Vercel, Netlify, and others
+- ⚡ **Lightning-fast development** with Vite  
+- 🔐 **User authentication** – Signup, login, logout via Supabase Auth  
+- 🛒 **Full eCommerce flow** – Browse, search, filter, add to cart, checkout  
+- 🧾 **Admin dashboard** – Add, edit, and delete products  
+- 🛍️ **Cart system** – Add to cart, update quantity, remove items  
+- ✅ **Order checkout** – Confirm and review orders with backend sync  
+- 🎯 **Responsive design** – Optimized for mobile, tablet, and desktop  
+- 🧠 **State management** – Built with Context API and custom hooks  
+- 📦 **Database integration** – PostgreSQL via Supabase  
+- 🧹 **Clean and type-safe code** – TypeScript + ESLint + Prettier  
+- 🚀 **Ready to deploy** – Vercel, Netlify, Supabase Hosting  
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer      | Technologies                             |
-|------------|------------------------------------------|
-| **Frontend**   | React, Vite, TypeScript                |
-| **Backend**    | Supabase (Auth + PostgreSQL)          |
-| **Styling**    | Tailwind CSS, PostCSS                 |
-| **State**      | React Context API, Custom Hooks       |
-| **Tools**      | ESLint, Prettier, Git, GitHub         |
-| **Deployment** | Vercel / Netlify / Supabase Hosting   |
+| Layer        | Technologies                             |
+|-------------|-------------------------------------------|
+| **Frontend** | React, Vite, TypeScript                  |
+| **Backend**  | Supabase (Auth + PostgreSQL)             |
+| **Styling**  | Tailwind CSS, PostCSS                    |
+| **State**    | React Context API, Custom Hooks          |
+| **Dev Tools**| ESLint, Prettier, Git, GitHub            |
+| **Deploy**   | Vercel / Netlify / Supabase              |
 
 ---
 
 ## 🎥 Live Demo
 
-🎬 **Watch the live walkthrough of Premium Haven:**
+Check out the walkthrough of **Premium Haven** in action:
 
-👉 [Click here to watch the demo](https://drive.google.com/file/d/1jYAmLT_0yivvEoo5G1fIw9uPgAHwBhO4/view?usp=sharing)
-
-> _Note: Opens Google Drive in a new tab._
+👉 [Watch demo on Google Drive](https://drive.google.com/file/d/1jYAmLT_0yivvEoo5G1fIw9uPgAHwBhO4/view?usp=sharing)
 
 ---
 
@@ -57,19 +51,19 @@ premium-haven/
 ├── public/               # Static assets
 ├── src/
 │   ├── assets/           # Images, icons
-│   ├── components/       # UI components (Navbar, ProductCard, etc.)
+│   ├── components/       # Reusable UI components
 │   ├── context/          # Global state providers (Cart, Auth)
 │   ├── hooks/            # Custom React hooks
-│   ├── pages/            # Page-level views (Home, Shop, Cart, etc.)
+│   ├── pages/            # Page-level components (Home, Cart, etc.)
 │   ├── services/         # Supabase API functions (Auth, DB ops)
-│   ├── types/            # TypeScript interfaces/types
-│   └── utils/            # Helper functions (formatters, validators)
-├── supabase/             # Supabase setup and SQL schema
+│   ├── types/            # TypeScript interfaces and types
+│   └── utils/            # Helper/utility functions
+├── supabase/             # Supabase setup, schema, and SQL
 ├── .env                  # Environment variables
 ├── tailwind.config.js    # Tailwind CSS configuration
 ├── vite.config.ts        # Vite configuration
 ├── tsconfig.json         # TypeScript configuration
-└── package.json          # Project metadata and dependencies
+└── package.json          # Project dependencies and metadata
 
 ````
 
@@ -77,7 +71,8 @@ premium-haven/
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repo
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/your-username/premium-haven.git
 cd premium-haven
@@ -91,14 +86,14 @@ npm install
 
 ### 3. Configure Environment Variables
 
-Create a `.env` file:
+Create a `.env` file in the root:
 
 ```
-VITE_SUPABASE_URL=your-url
-VITE_SUPABASE_ANON_KEY=your-anon-key
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
 ```
 
-### 4. Start the App
+### 4. Start the Development Server
 
 ```bash
 npm run dev
@@ -108,47 +103,51 @@ npm run dev
 
 ## ⚙️ Available Scripts
 
-| Command          | Description                 |
-| ---------------- | --------------------------- |
-| `npm run dev`    | Start local dev server      |
-| `npm run build`  | Build for production        |
-| `npm run lint`   | Run ESLint for code quality |
-| `npm run format` | Format code with Prettier   |
+| Command          | Description                    |
+| ---------------- | ------------------------------ |
+| `npm run dev`    | Run the development server     |
+| `npm run build`  | Build the app for production   |
+| `npm run lint`   | Run ESLint to check code style |
+| `npm run format` | Format code using Prettier     |
 
 ---
 
 ## 🔐 Supabase Setup
 
-* Enable **Auth** (email/password)
-* Create tables: `products`, `users`, `orders`, `cart_items`
-* Configure RLS policies for secure access
+* Enable **Authentication** (Email/Password)
+* Create the following tables:
 
-📚 SQL schema and instructions can be found in the [`/supabase`](/supabase) folder.
+  * `products`
+  * `users`
+  * `orders`
+  * `cart_items`
+* Define appropriate **Row Level Security (RLS)** policies for secure data access
+
+📂 SQL schema and detailed setup instructions can be found inside the [`/supabase`](./supabase) folder.
 
 ---
 
 ## 💡 Future Improvements
 
-* 🧾 Payment Gateway Integration (e.g., Stripe)
-* 📦 Inventory Management System
-* 🧠 AI Product Recommendations
-* 🌐 Multi-language Support
-* 📱 PWA Support
+* 🧾 Integrate Stripe or Razorpay for payments
+* 📦 Inventory tracking and stock management
+* 🧠 AI-driven product recommendations
+* 🌐 Multi-language and currency support
+* 📱 Convert to Progressive Web App (PWA)
 
 ---
 
 ## 📃 License
 
-This project is licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE).
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome!
+If you'd like to suggest a feature or fix a bug, feel free to [open an issue](https://github.com/your-username/premium-haven/issues) or submit a pull request.
 
 ---
-
-```
 
 
