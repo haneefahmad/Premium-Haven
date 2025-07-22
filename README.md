@@ -1,6 +1,4 @@
-Great! Here's your complete `README.md` with the **🎥 Live Demo** section updated to include your **Google Drive video link**:
 
----
 
 ```markdown
 # 🛍️ **Premium Haven – Full Stack eCommerce Website**
@@ -153,5 +151,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ```
 
-Let me know if you want the video to be embedded or styled with a thumbnail preview.
-```
+
