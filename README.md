@@ -4,8 +4,6 @@
 
 **Premium Haven** is a fast, scalable, and fully responsive eCommerce web application built with modern web technologies like React, Vite, TypeScript, Tailwind CSS, and Supabase.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
 ---
 
 ## Features
@@ -134,12 +132,6 @@ Refer to the `supabase/` directory for schema definitions and setup instructions
 * Personalized product recommendations
 * Internationalization with multi-language and currency support
 * Progressive Web App (PWA) conversion
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
